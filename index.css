@@ -1,4 +1,49 @@
+:root {
+    --app-bkg: #059669;
+    --app-color: #f3f4f6;
+    --input-bkg: #064E3B;
+    --input-color: #ECFDF5;
+    --dark-grey: #1F2937;
+    --list-icon: #34D399;
+}
+
 html, body {
     margin: 0;
     padding: 0;
+    background: var(--app-bkg);
+    color: var(--app-color);
+}
+
+h1, h2, p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+#app-body {
+    padding: 3.125rem 2rem;
+    text-align: center;
+}
+
+.app-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.icon-wrapper {
+    height: 90px;
+}
+
+#app-icon {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.app-list {
+    
 }
