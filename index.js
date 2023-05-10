@@ -16,6 +16,8 @@ const toEl = document.getElementById("to-el")
 const endorseList = document.getElementById("endorsements-list")
 const pubBtn = document.getElementById("publish-btn")
 
+//local storage
+const itemFavorites = JSON.parse( localStorage.getItem("favorites") )
 
 //functions
 function clearInputs() {
@@ -71,6 +73,7 @@ function appendItem(to, fromX, endorsement, rating, Id) {
         let location = `endorsements/${id}`
         let refLocation = ref(database, location)
         console.log(location)
+        localStorage.setItem("favorites", currentID)
         let newRating = {
             "rating": rating += 1
         }
