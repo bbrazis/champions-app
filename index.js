@@ -67,7 +67,7 @@ function appendItem(to, fromX, endorsement, rating, Id) {
     
     //event listener
     favorites.addEventListener("click", function() {
-        console.log(currentID)
+        console.log(currentID[0])
         //let itemLocation = ref(database, location)
         //console.log(child)
         /*let newRating = {
