@@ -57,6 +57,8 @@ function appendItem(to, fromX, endorsement, rating, Id) {
     
     if (localStorage.getItem(currentID)) {
         favorites.classList.add("active")
+    } else {
+        favorites.classList.remove("active")
     }
 
     //setting text content values for elements
