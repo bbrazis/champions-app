@@ -17,7 +17,7 @@ const endorseList = document.getElementById("endorsements-list")
 const pubBtn = document.getElementById("publish-btn")
 
 //local storage
-const itemFavorites = JSON.parse( localStorage.getItem("favorites") )
+//const itemFavorites = JSON.parse( localStorage.getItem("favorites") )
 
 //functions
 function clearInputs() {
