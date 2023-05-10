@@ -56,9 +56,9 @@ function appendItem(to, fromX, endorsement, rating, Id) {
     div.setAttribute("class", "from-wrap")
     
     if (localStorage.getItem(currentID)) {
-        favorites.setAttribute("class", "active")
+        favorites.setAttribute("class", "favorites active")
     } else {
-        favorites.removeAttribute("class", "active")
+        favorites.setAttribute("class", "favorites")
     }
 
     //setting text content values for elements
