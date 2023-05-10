@@ -57,8 +57,6 @@ function appendItem(to, fromX, endorsement, rating, Id) {
     
     if (localStorage.getItem(currentID)) {
         favorites.setAttribute("class", "favorites active")
-    } else {
-        favorites.setAttribute("class", "favorites")
     }
 
     //setting text content values for elements
@@ -84,6 +82,7 @@ function appendItem(to, fromX, endorsement, rating, Id) {
                 "rating": rating -= 1
             }
             update(refLocation, newRating)
+            favorites.setAttribute("class", "favorites")
             localStorage.removeItem(currentID)
         } else {
             localStorage.setItem(currentID, "clicked")
