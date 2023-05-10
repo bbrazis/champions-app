@@ -57,8 +57,6 @@ function appendItem(to, fromX, endorsement, rating, Id) {
     
     if (localStorage.getItem(currentID)) {
         favorites.classList.add("active")
-    } else {
-        favorites.classList.toggle("active")
     }
 
     //setting text content values for elements
@@ -85,13 +83,12 @@ function appendItem(to, fromX, endorsement, rating, Id) {
             }
             update(refLocation, newRating)
             localStorage.removeItem(currentID)
-            favorites.classList.toggle("active")
         } else {
             localStorage.setItem(currentID, "clicked")
             let newRating = {
                 "rating": rating += 1
             }
-            favorites.classList.toggle("active")
+            
             update(refLocation, newRating)
         }
     })
@@ -118,6 +115,13 @@ onValue(dataRef, function(snapshot) {
             
             appendItem(to, fromX, endorsement, rating, id)
         }
+
+        let favBtns = document.querySelectorAll(".favorites")
+        favBtns.forEach(btn => {
+            btn.addEventListener("click", function() {
+                btn.classList.toggle("active")
+            })
+        });
     } else {
         console.log("No database items")
     }
