@@ -85,11 +85,13 @@ function appendItem(to, fromX, endorsement, rating, Id) {
             }
             update(refLocation, newRating)
             localStorage.removeItem(currentID)
+            favorites.classList.remove("active")
         } else {
             localStorage.setItem(currentID, "clicked")
             let newRating = {
                 "rating": rating += 1
             }
+            favorites.classList.add("active")
             update(refLocation, newRating)
         }
     })
