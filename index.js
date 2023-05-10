@@ -73,7 +73,7 @@ function appendItem(to, fromX, endorsement, rating, Id) {
         let location = `endorsements/${id}`
         let refLocation = ref(database, location)
         console.log(location)
-        localStorage.setItem("favorites", currentID)
+        localStorage.setItem("favorites", currentID[0])
         let newRating = {
             "rating": rating += 1
         }
