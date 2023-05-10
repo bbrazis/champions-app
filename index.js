@@ -77,13 +77,19 @@ function appendItem(to, fromX, endorsement, rating, Id) {
         let location = `endorsements/${id}`
         let refLocation = ref(database, location)
 
+        //toggle active class
+        favorites.classList.toggle("active")
+
         if (localStorage.getItem(currentID)) {
+            //removing clicked from local storage
+            localStorage.removeItem(currentID)
             let newRating = {
                 "rating": rating -= 1
             }
-            localStorage.removeItem(currentID)
+            
             update(refLocation, newRating)
         } else {
+            //adding clicked from local storage
             localStorage.setItem(currentID, "clicked")
             let newRating = {
                 "rating": rating += 1
@@ -115,13 +121,6 @@ onValue(dataRef, function(snapshot) {
             
             appendItem(to, fromX, endorsement, rating, id)
         }
-
-        let favBtns = document.querySelectorAll(".favorites")
-        favBtns.forEach(btn => {
-            btn.addEventListener("click", function() {
-                btn.classList.toggle("active")
-            })
-        });
     } else {
         console.log("No database items")
     }
