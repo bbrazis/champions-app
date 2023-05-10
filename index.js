@@ -78,7 +78,7 @@ function appendItem(to, fromX, endorsement, rating, Id) {
                 "rating": rating -= 1
             }
             update(refLocation, newRating)
-            localStorage.clear(currentID)
+            localStorage.removeItem(currentID)
         } else {
             localStorage.setItem(currentID, "clicked")
             let newRating = {
