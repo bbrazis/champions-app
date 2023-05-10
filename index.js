@@ -84,7 +84,6 @@ function appendItem(to, fromX, endorsement, rating, Id) {
                 "rating": rating -= 1
             }
             update(refLocation, newRating)
-            favorites.classList.remove("active")
             localStorage.removeItem(currentID)
         } else {
             localStorage.setItem(currentID, "clicked")
