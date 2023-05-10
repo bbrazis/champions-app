@@ -20,6 +20,7 @@ html, body {
     padding: 0;
     background: var(--app-bkg);
     color: var(--app-color);
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 h1, h2, p {
@@ -84,6 +85,7 @@ h2 {
     border-radius: var(--radius);
     flex-grow: 1;
     border: none;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .input-wrapper button {
@@ -95,6 +97,7 @@ h2 {
     padding: 1rem;
     font-size: 1.4rem;
     font-weight: 600;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #input-el {
