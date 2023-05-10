@@ -68,12 +68,13 @@ function appendItem(to, fromX, endorsement, rating, Id) {
     //event listener
     favorites.addEventListener("click", function() {
         let id = currentID[0]
-        let itemLocation = ref(database, `endorsements/${id}/rating`)
-        console.log(itemLocation)
-        /*let newRating = {
+        let location = `endorsements/${id}/rating`
+        let refLocation = ref(database, location)
+        console.log(location)
+        let newRating = {
             "rating": rating += 1
         }
-        //update(itemLocation, newRating)*/
+        update(refLocation, newRating)
     })
     
     //clear
