@@ -9,6 +9,7 @@
     --radius: .5rem;
     --form-gap: .75rem;
     --list-gap: 1rem;
+    --active-color: #C4B5FD;
 }
 
 * {
@@ -182,4 +183,8 @@ h2 {
 .favorites span {
     font-weight: 600;
     font-size: 1.1rem;
+}
+
+.favorites.active {
+    color: var(--active-color);
 }
