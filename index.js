@@ -71,9 +71,7 @@ function appendItem(to, fromX, endorsement, rating, Id) {
         let location = `endorsements/${id}/rating`
         let refLocation = ref(database, location)
         console.log(location)
-        let newRating = {
-            "rating": rating += 1
-        }
+        let newRating = rating += 1
         update(refLocation, newRating)
     })
     
