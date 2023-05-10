@@ -58,7 +58,7 @@ function appendItem(to, fromX, endorsement, rating, Id) {
     if (localStorage.getItem(currentID)) {
         favorites.classList.add("active")
     } else {
-        favorites.classList.remove("active")
+        favorites.classList.toggle("active")
     }
 
     //setting text content values for elements
@@ -78,20 +78,20 @@ function appendItem(to, fromX, endorsement, rating, Id) {
         let id = currentID
         let location = `endorsements/${id}`
         let refLocation = ref(database, location)
-        console.log(location)
+
         if (localStorage.getItem(currentID)) {
             let newRating = {
                 "rating": rating -= 1
             }
             update(refLocation, newRating)
             localStorage.removeItem(currentID)
-            favorites.classList.remove("active")
+            favorites.classList.toggle("active")
         } else {
             localStorage.setItem(currentID, "clicked")
             let newRating = {
                 "rating": rating += 1
             }
-            favorites.classList.add("active")
+            favorites.classList.toggle("active")
             update(refLocation, newRating)
         }
     })
