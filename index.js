@@ -69,11 +69,11 @@ function appendItem(to, fromX, endorsement, rating, Id) {
     
     //event listener
     favorites.addEventListener("click", function() {
-        let id = currentID[0]
+        let id = currentID
         let location = `endorsements/${id}`
         let refLocation = ref(database, location)
         console.log(location)
-        localStorage.setItem("favorites", currentID[0])
+        localStorage.setItem("favorites", currentID)
         let newRating = {
             "rating": rating += 1
         }
@@ -93,14 +93,14 @@ onValue(dataRef, function(snapshot) {
         clearList()
         
         for (let i = 0; i < itemArr.length; i++) {
-            let currentID = itemArr[0]
             let currentVals = Object.values(itemArr[i][1])
+            let id = itemArr[i][0]
             let to = currentVals[3]
             let fromX = currentVals[1]
             let endorsement = currentVals[0]
             let rating = currentVals[2]
             
-            appendItem(to, fromX, endorsement, rating, currentID)
+            appendItem(to, fromX, endorsement, rating, id)
         }
     } else {
         console.log("No database items")
